@@ -69,11 +69,11 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "husky": "^1.1.4",
-    "nyc": "^13.0.1",
-    "release-it": "^8.0.1",
+    "nyc": "^14.1.1",
+    "release-it": "^12.4.1",
     "sinon": "^7.1.1"
   },
   "dependencies": {
-    "@k14v/printf-tokenize": "0.0.4"
+    "@k14v/printf-tokenize": "0.0.5"
   }
 }
