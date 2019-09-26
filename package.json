@@ -1,6 +1,6 @@
 {
   "name": "@k14v/rexpmat",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create regular expression from string using printf format",
   "main": "index.js",
   "scripts": {
