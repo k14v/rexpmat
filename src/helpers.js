@@ -18,3 +18,5 @@ export const createRegexpSpecifierMap = ({
 export const matchOperatorsRe = /[|^.\\{}()[\]$?]/g;
 
 export const escapeStringRegexp = str => str.replace(matchOperatorsRe, '\\$&');
+
+export const removeEscapedPercent = (str, strict) => (strict ? str.replace(/(%{3}(?!%))/g, '%%') : str).replace(/%%/g, '%');
