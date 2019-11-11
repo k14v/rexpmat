@@ -1,5 +1,9 @@
 import printfTokenize, { TOKEN_TYPES } from '@k14v/printf-tokenize';
-import { createRegexpSpecifierMap, escapeStringRegexp } from './helpers';
+import {
+  createRegexpSpecifierMap,
+  escapeStringRegexp,
+  removeEscapedPercent,
+} from './helpers';
 
 
 export default (str, opts) => {
@@ -36,6 +40,6 @@ export default (str, opts) => {
 
       return `${prefix}(${scope})`;
     }
-    return escapeStringRegexp(token.value);
+    return removeEscapedPercent(escapeStringRegexp(token.value));
   }).join(''), 'gm');
 };

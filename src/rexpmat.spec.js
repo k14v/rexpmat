@@ -21,6 +21,9 @@ Object.entries({
   'floats: 3.14 +3e+000 3.141600E+000 ': [
     'floats: %4.2f %+.0e %E ', '3.14', '3e+000', '3.141600E+000',
   ],
+  'floats using escaped percent: 1% 2%% 2%% 3%%% 4%%%%': [
+    'floats using escaped percent: %d%% %d%%% %d%%%% %d%%%%%% %d%%%%%%%', '1', '2', '2', '3', '4',
+  ],
   'Width trick:    10 ': [
     'Width trick: %*d ', '10',
   ],
