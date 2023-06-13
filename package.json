@@ -39,11 +39,13 @@
   },
   "ava": {
     "files": [
-      "src/**/*.spec.js"
+      "src/**/*.spec.ts"
     ],
-    "require": [
-      "@babel/register",
-      "@babel/polyfill"
+    "extensions": {
+      "ts": "module"
+    },
+    "nodeArguments": [
+      "--loader=ts-node/esm"
     ]
   },
   "c8": {
