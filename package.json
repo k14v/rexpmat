@@ -2,13 +2,18 @@
   "name": "@k14v/rexpmat",
   "version": "0.0.3",
   "description": "Create regular expression from string using printf format",
-  "main": "index.js",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
   "scripts": {
     "test": "nyc --reporter=lcov --reporter=html --reporter=text ava",
     "test:watch": "ava --watch",
-    "build": "babel src --out-dir=lib --ignore=**/*.spec.js",
+    "build": "tsup src/index.ts --dts --format cjs,esm",
     "watch": "npm run build -- --watch",
-    "prepublishOnly": "npm run build && npm run lint && npm run test",
+    "prepublishOnly": "npm run lint && npm run test && npm run build",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "coverage": "codecov",
@@ -32,11 +37,7 @@
   ],
   "author": "",
   "license": "MIT",
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
+  "files": ["dist"],
   "ava": {
     "files": [
       "src/**/*.spec.ts"
