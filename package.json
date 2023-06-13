@@ -9,7 +9,7 @@
     "require": "./dist/index.cjs"
   },
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=html --reporter=text ava",
+    "test": "c8 --reporter=lcov --reporter=html --reporter=text ava",
     "test:watch": "ava --watch",
     "build": "tsup src/index.ts --dts --format cjs,esm",
     "watch": "npm run build -- --watch",
