@@ -46,9 +46,9 @@
       "@babel/polyfill"
     ]
   },
-  "nyc": {
+  "c8": {
     "exclude": [
-      "src/*.spec.js"
+      "src/*.spec.ts"
     ]
   },
   "devDependencies": {
