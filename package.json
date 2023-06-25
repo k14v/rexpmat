@@ -37,7 +37,9 @@
   ],
   "author": "",
   "license": "MIT",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "ava": {
     "files": [
       "src/**/*.spec.ts"
@@ -55,7 +57,11 @@
     ]
   },
   "devDependencies": {
+    "@types/node": "^20.2.5",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
     "ava": "^5.3.0",
+    "c8": "^7.14.0",
     "codecov": "^3.1.0",
     "cross-env": "^5.2.0",
     "eslint": "^8.41.0",
@@ -63,10 +69,6 @@
     "husky": "^1.1.4",
     "release-it": "^12.4.1",
     "sinon": "^7.1.1",
-    "@types/node": "^20.2.5",
-    "@typescript-eslint/eslint-plugin": "^5.59.8",
-    "@typescript-eslint/parser": "^5.59.8",
-    "c8": "^7.14.0",
     "ts-node": "^10.9.1",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4"
