@@ -11,12 +11,12 @@ export function createRegexpSpecifierMap (options?: RegexpSpecifierMapOptions) {
   return ({
     [TokenSpecifier.Hexadecimal]: '[0-9a-f]+',
     [TokenSpecifier.HexadecimalUpper]: '[0-9A-F]+',
-    [TokenSpecifier.Scientific]: `\\d+(\\${ds}\\d+)?e\\+0+`,
-    [TokenSpecifier.ScientificUpper]: `\\d+(\\${ds}\\d+)?E\\+0+`,
+    [TokenSpecifier.Scientific]: `[\\d\\${ds}\\d]+?e\\+0+`,
+    [TokenSpecifier.ScientificUpper]: `[\\d\\${ds}\\d]+?E\\+0+`,
     [TokenSpecifier.Character]: '[\\w\\W]',
     [TokenSpecifier.String]: '[\\w\\W]+',
     [TokenSpecifier.Octal]: '[0-7]+',
-    [TokenSpecifier.Digit]: `\\d+(\\${ds}\\d+)?`,
+    [TokenSpecifier.Digit]: `[\\d\\d+\\${ds}\\d]+`,
     [TokenSpecifier.Integer]: `\\d+`,
     [TokenSpecifier.Float]: `\\d+\\${ds}\\d+`,
   });
