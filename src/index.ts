@@ -1,2 +1,2 @@
-export * from './helpers';
-export { default } from './rexpmat';
+export * from './helpers.ts';
+export { default } from './rexpmat.ts';

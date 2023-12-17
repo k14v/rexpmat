@@ -5,7 +5,7 @@ import {
   escapeStringRegexp,
   removeEscapedPercent,
   RegexpSpecifierMapOptions,
-} from './helpers';
+} from './helpers.ts';
 
 
 function rexpmat(str: string, options?: RegexpSpecifierMapOptions){
