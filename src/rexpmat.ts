@@ -1,19 +1,21 @@
-import printfTokenize, { TOKEN_TYPES } from '@k14v/printf-tokenize';
+// Utils
+import printfTokenize, { TokenKind } from '@k14v/printf-tokenize';
 import {
   createRegexpSpecifierMap,
   escapeStringRegexp,
   removeEscapedPercent,
-} from './helpers';
+  RegexpSpecifierMapOptions,
+} from './helpers.ts';
 
 
-export default (str, opts) => {
-  const regexpSpecifierMap = createRegexpSpecifierMap(opts);
+function rexpmat(str: string, options?: RegexpSpecifierMapOptions){
+  const regexpSpecifierMap = createRegexpSpecifierMap(options);
   return new RegExp(printfTokenize(str).map((token) => {
-    if (token.type === TOKEN_TYPES.PARAMETER) {
-      const regexpMap = regexpSpecifierMap[token.specifier];
-      if (!regexpMap) {
+    if (token.kind === TokenKind.Parameter) {
+      if(!token.specifier){
         throw new Error(`Unexpected specifier ${token.specifier}`);
       }
+      const regexpMap = regexpSpecifierMap[token.specifier];
       let prefix = '';
       let scope = regexpMap;
 
@@ -42,4 +44,6 @@ export default (str, opts) => {
     }
     return removeEscapedPercent(escapeStringRegexp(token.value));
   }).join(''), 'gm');
-};
+}
+
+export default rexpmat;

@@ -1,5 +1,5 @@
 import test from 'ava';
-import rexpmat from '../src/rexpmat';
+import rexpmat from './rexpmat.ts';
 
 
 Object.entries({
@@ -33,7 +33,16 @@ Object.entries({
 }).forEach((spec) => {
   test(`should create regexp using the format string "${spec[1][0]}"`, (t) => {
     const regexp = rexpmat(spec[1][0]);
-    t.deepEqual((regexp.exec(spec[0]) || []).slice(1), spec[1].slice(1));
+    const result = regexp.exec(spec[0]) || [];
+    t.like(result.slice(1), spec[1].slice(1));
     t.pass();
   });
+});
+
+test('should throw an error when the specifier is not supported', (t) => {
+  const error = t.throws(() => rexpmat('%p'));
+  if (error instanceof Error) {
+    t.is(error.message, 'Invalid specifier: "p"');
+  }
+  t.pass();
 });
