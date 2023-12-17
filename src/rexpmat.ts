@@ -8,7 +8,7 @@ import {
 } from './helpers';
 
 
-function main(str: string, options: RegexpSpecifierMapOptions){
+function rexpmat(str: string, options?: RegexpSpecifierMapOptions){
   const regexpSpecifierMap = createRegexpSpecifierMap(options);
   return new RegExp(printfTokenize(str).map((token) => {
     if (token.kind === TokenKind.Parameter) {
@@ -46,4 +46,4 @@ function main(str: string, options: RegexpSpecifierMapOptions){
   }).join(''), 'gm');
 }
 
-export default main;
+export default rexpmat;
