@@ -8,6 +8,7 @@
     "import": "./dist/index.js",
     "require": "./dist/index.cjs"
   },
+  "type": "module",
   "scripts": {
     "test": "c8 --reporter=lcov --reporter=html --reporter=text ava",
     "test:watch": "ava --watch",
