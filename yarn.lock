@@ -235,10 +235,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@k14v/printf-tokenize@0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@k14v/printf-tokenize/-/printf-tokenize-0.0.5.tgz#47a2ea6bf089638fbdaa5c801d9e25617c80eda8"
-  integrity sha512-YUcUQbQprhFO2YoKvfjSBuuA0Vn1K3Vqf8eohnCKDMjK9NCFZY3OB8OX6FB3aANjkeVdiiQYqRfM34gNjGDm1w==
+"@k14v/printf-tokenize@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@k14v/printf-tokenize/-/printf-tokenize-0.0.6.tgz#7efe9b33beeef14160833ad290023bfd80497421"
+  integrity sha512-e1s5GEiDSxKl3A6rNuq+EPoDQsSXukEcM+alMO0IrE4tlC3AVuN25qIG7G6uH+CqChSHYUVnkGpBnKRvSIZHJg==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"

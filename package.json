@@ -75,6 +75,6 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@k14v/printf-tokenize": "0.0.5"
+    "@k14v/printf-tokenize": "0.0.6"
   }
 }
