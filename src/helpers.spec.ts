@@ -3,7 +3,7 @@ import test from 'ava';
 import {
     createRegexpSpecifierMap,
     escapeStringRegexp,
-    removeEscapedPercent
+    removeEscapedPercent,
 } from './helpers.ts';
 // Types
 import { TokenSpecifier } from '@k14v/printf-tokenize';
@@ -49,7 +49,7 @@ test('the function createRegexpSpecifierMap should return a regex as a string fo
     t.is(execRegexFromString(TokenSpecifier.Float, '134.33'), true);
     t.is(execRegexFromString(TokenSpecifier.Float, '123'), false);
     t.is(execRegexFromString(TokenSpecifier.Float, 'a'), false);
-})
+});
 
 test('the function escapeStringRegexp should replace the symbols [|^.\\\\{}()[\]$?] for the symbol escaped', (t) => {
     t.is(escapeStringRegexp('['), '\\[');
@@ -65,17 +65,17 @@ test('the function escapeStringRegexp should replace the symbols [|^.\\\\{}()[\]
     t.is(escapeStringRegexp(']'), '\\]');
     t.is(escapeStringRegexp('$'), '\\$');
     t.is(escapeStringRegexp('?'), '\\?');
-})
+});
 
 test('the function removeEscapedPercent should replace two percent symbols for just one percent symbol', (t) => {
     t.is(removeEscapedPercent('%%'), '%');
     t.is(removeEscapedPercent('%%%'), '%%');
-})
+});
 
 test('the function removeEscapedPercent should replace three percent symbols for just one percent symbol if the strict flag is true', (t) => {
     t.is(removeEscapedPercent('%%%', true), '%');
-})
+});
 
 test('the function removeEscapedPercent should NOT replace four percent symbols for just one percent symbol if the strict flag is true', (t) => {
     t.is(removeEscapedPercent('%%%%', true), '%%');
-})
+});

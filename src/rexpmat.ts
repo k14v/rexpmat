@@ -17,7 +17,7 @@ function rexpmat(str: string, options?: RegexpSpecifierMapOptions){
       }
       const regexpMap = regexpSpecifierMap[token.specifier];
       let prefix = '';
-      let scope = regexpMap;
+      const scope = regexpMap;
 
       // Left Padding
       if (token.width) {
